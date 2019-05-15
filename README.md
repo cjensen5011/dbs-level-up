@@ -1,4 +1,4 @@
-# mevnexample
+# DBS Level Up App
 
 ## Project setup
 ```
@@ -27,3 +27,12 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Built from
+https://appdividend.com/2018/11/21/mevn-stack-tutorial-with-example-from-scratch/
+
+### Local Dev
+run project  - npm run serve (runs on localhost:8080)
+run server ~/project/api - nodemon sever
+run db - mongod
+

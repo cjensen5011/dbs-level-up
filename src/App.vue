@@ -1,28 +1,66 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark " v-bind:class="{ 'navbarOpen': show }">
+      <router-link class="navbar-brand" to="/">Level Up</router-link>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        v-on:click="toggleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" v-bind:class="{ 'show': show }">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <router-link class="nav-link" to="/" @click.native="toggleNavbar">Home</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/create" @click.native="toggleNavbar">Create Post</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/posts" @click.native="toggleNavbar">Posts</router-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br>
+    <transition name="fade" mode="out-in">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  props: {
+    msg: String
+  },
+  data() {
+    return {
+      show: false
+    }
+  },
+  methods: {
+    toggleNavbar() {
+      this.show = !this.show;
+    }
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
 }
 </style>
