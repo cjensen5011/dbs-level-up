@@ -32,7 +32,16 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 https://appdividend.com/2018/11/21/mevn-stack-tutorial-with-example-from-scratch/
 
 ### Local Dev
-run project  - npm run serve (runs on localhost:8080)
-run server ~/project/api - nodemon sever
-run db - mongod
+run project (runs on localhost:8080)
+```
+npm run serve
+```
+run server ~/project/api
+```
+nodemon sever
+```
+run db
+```
+mongod
+```
 
