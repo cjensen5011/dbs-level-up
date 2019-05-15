@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark " v-bind:class="{ 'navbarOpen': show }">
       <router-link class="navbar-brand" to="/">Level Up</router-link>
       <button
@@ -62,5 +62,10 @@ export default {
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
+}
+.small-icon {
+  width: 2rem;
+  height: auto;
+  padding-right: 5px;
 }
 </style>
