@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark " v-bind:class="{ 'navbarOpen': show }">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" v-bind:class="{ 'navbarOpen': show }">
       <router-link class="navbar-brand" to="/">Level Up</router-link>
       <button
         class="navbar-toggler"
@@ -15,16 +15,29 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent" v-bind:class="{ 'show': show }">
+      <div
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent"
+        v-bind:class="{ 'show': show }"
+      >
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <router-link class="nav-link" to="/" @click.native="toggleNavbar">Home</router-link>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link class="nav-link" to="/create" @click.native="toggleNavbar">Create Post</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/posts" @click.native="toggleNavbar">Posts</router-link>
+          </li>-->
+          <!-- <li class="nav-item">
+            <router-link class="nav-link" to="/add-goal" @click.native="toggleNavbar">Add Goal</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/goals" @click.native="toggleNavbar">Goals</router-link>
+          </li>-->
+          <li class="nav-item">
+            <router-link class="nav-link" to="/add-event" @click.native="toggleNavbar">Add Event</router-link>
           </li>
         </ul>
       </div>
@@ -44,7 +57,7 @@ export default {
   data() {
     return {
       show: false
-    }
+    };
   },
   methods: {
     toggleNavbar() {

@@ -18,7 +18,7 @@
           </div>
         </div>
       </div>
-      <br />
+      <br>
       <div class="form-group">
         <button class="btn btn-primary">Create</button>
       </div>
@@ -27,19 +27,19 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        post: {}
-      }
-    },
-    methods: {
-      addPost() {
-        let uri = 'http://localhost:4000/posts/add';
-        this.axios.post(uri, this.post).then(() => {
-          this.$router.push({name: 'posts'});
-        });
-      }
+export default {
+  data() {
+    return {
+      post: {}
+    };
+  },
+  methods: {
+    addPost() {
+      let uri = "http://localhost:4000/posts/add";
+      this.axios.post(uri, this.post).then(() => {
+        this.$router.push({ name: "posts" });
+      });
     }
   }
+};
 </script>
